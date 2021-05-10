@@ -39,7 +39,7 @@ void step(int steps_to_move) {
 
     // decrement the number of steps, moving one step each time:
     while (steps_left > 0) {
-        __delay_ms(5);
+        __delay_ms(2);
         // increment or decrement the step number,
         // depending on direction:
         if (direction == 1) {

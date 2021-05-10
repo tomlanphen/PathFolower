@@ -1,4 +1,4 @@
-# 1 "main.c"
+# 1 "LA.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "main.c" 2
+# 1 "LA.c" 2
 #pragma config FOSC = INTOSC
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
@@ -4472,16 +4472,21 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
-# 17 "main.c" 2
+# 17 "LA.c" 2
 
 
 # 1 "./resources.h" 1
 # 13 "./resources.h"
-char var1 = 0x20;
-char var2 = 0x08;
-char var;
 int stepvar;
-# 19 "main.c" 2
+
+char comb1 = 0x00;
+char comb2 = 0x00;
+char comb3 = 0x00;
+char comb4 = 0x00;
+char comb5 = 0x00;
+char comb6 = 0x00;
+char comb7 = 0x00;
+# 19 "LA.c" 2
 
 # 1 "./stepperlib.h" 1
 
@@ -4500,7 +4505,7 @@ void stepMotor(int this_step);
 int direction;
 int number_of_steps;
 int step_number;
-# 20 "main.c" 2
+# 20 "LA.c" 2
 
 # 1 "./uartlib.h" 1
 # 10 "./uartlib.h"
@@ -4531,45 +4536,93 @@ char uart_read_char(void);
 unsigned char uart_numof_bytes_in_buffer(void);
 
 void uart_flush_buffer(void);
-# 21 "main.c" 2
+# 21 "LA.c" 2
 
 
 
 void setup(void);
+void empty_comb(void);
 __attribute__((inline)) void button_interrupt(void);
 
 void __attribute__((picinterrupt(("")))) ISR(void) {
-    if (IOCAF) {
-        _delay((unsigned long)((5)*(1000000/4000.0)));
-        if (PORTAbits.RA2 == 1) {
-            step(stepvar);
-        }
-        IOCAF = 0;
-    }
+    uart_handle_rcv_int();
+    uart_handle_tx_int();
 }
 
 void main(void) {
-    var = 1;
-    stepvar = 2048;
+
     setup();
     Stepper(512);
     setup();
+    empty_comb();
     while (1) {
+        char uart_char = uart_read_char();
+        if (uart_char) {
+            if (comb1 == 0x00) {
+                comb1 = uart_char;
+            } else if (comb2 == 0x00) {
+                comb2 = uart_char;
+            } else if (comb3 == 0x00) {
+                comb3 = uart_char;
+            } else if (comb4 == 0x00) {
+                comb4 = uart_char;
+            } else if (comb5 == 0x00) {
+                comb5 = uart_char;
+            } else if (comb6 == 0x00) {
+                comb6 = uart_char;
+            } else if (comb7 == 0x00) {
+                comb7 = uart_char;
+            }
+        }
+
+
+        if (comb1 == 0x6C && comb2 == 0x61 && comb6 == 0x6C && comb7 == 0x61) {
+                        if (comb5 == 0x76) {
+                stepvar = comb3 * comb4 * -1;
+            } else if (comb5 == 0x61) {
+                stepvar = comb3 * comb4;
+            }
+
+            empty_comb();
+        }
+
+        if (comb1 == 0x73 && comb2 == 0x73 && comb3 == 0x73 && comb4 == 0x73 && comb5 == 0x73 && comb6 == 0x73 && comb7 == 0x73) {
+            step(stepvar);
+            empty_comb();
+        }
+
+        if (comb7 != 0x00) {
+            empty_comb();
+        }
+
+        if (comb1 != 0x6C && comb1 != 0x73 && comb1 != 0x00) {
+            empty_comb();
+        } else if (comb2 != 0x61 && comb2 != 0x73 && comb2 != 0x00) {
+            empty_comb();
+        }
     }
 
     return;
 }
 
-void setup(void){
+void empty_comb(void) {
+    comb1 = 0x00;
+    comb2 = 0x00;
+    comb3 = 0x00;
+    comb4 = 0x00;
+    comb5 = 0x00;
+    comb6 = 0x00;
+    comb7 = 0x00;
+}
+
+void setup(void) {
     OSCCONbits.IRCF = 0b1011;
     OSCCONbits.SCS = 0b00;
     OSCCONbits.SPLLEN = 0;
 
-    TRISA2 = 1;
-    ANSELAbits.ANSA2 = 0;
-    IOCAPbits.IOCAP2 = 1;
-    IOCIE = 1;
-
     GIE = 1;
     PEIE = 1;
+
+    if (!uart_init(3, 1)) {
+    }
 }

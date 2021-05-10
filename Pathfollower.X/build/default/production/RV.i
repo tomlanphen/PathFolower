@@ -1,4 +1,4 @@
-# 1 "stepperlib.c"
+# 1 "RV.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,24 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "stepperlib.c" 2
+# 1 "RV.c" 2
+#pragma config FOSC = INTOSC
+#pragma config WDTE = OFF
+#pragma config PWRTE = OFF
+#pragma config MCLRE = ON
+#pragma config CP = OFF
+#pragma config CPD = OFF
+#pragma config BOREN = ON
+#pragma config CLKOUTEN = OFF
+#pragma config IESO = ON
+#pragma config FCMEN = ON
+#pragma config WRT = OFF
+#pragma config PLLEN = ON
+#pragma config STVREN = ON
+#pragma config BORV = LO
+#pragma config LVP = OFF
+
+
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -4455,7 +4472,21 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
-# 1 "stepperlib.c" 2
+# 17 "RV.c" 2
+
+
+# 1 "./resources.h" 1
+# 13 "./resources.h"
+int stepvar;
+
+char comb1 = 0x00;
+char comb2 = 0x00;
+char comb3 = 0x00;
+char comb4 = 0x00;
+char comb5 = 0x00;
+char comb6 = 0x00;
+char comb7 = 0x00;
+# 19 "RV.c" 2
 
 # 1 "./stepperlib.h" 1
 
@@ -4474,97 +4505,124 @@ void stepMotor(int this_step);
 int direction;
 int number_of_steps;
 int step_number;
-# 2 "stepperlib.c" 2
+# 20 "RV.c" 2
+
+# 1 "./uartlib.h" 1
+# 10 "./uartlib.h"
+typedef enum {
+    false,
+    true
+} bool;
+
+typedef char clockspeed;
+
+typedef char baudrate;
+
+typedef char uart_multiplier;
+
+extern const short spbr_array[(7)][(8)][(4)];
+extern volatile char uart_recieve_buffer[(10)];
+extern volatile char uart_recieve_head;
+extern volatile char uart_recieve_tail;
+
+bool uart_init(baudrate b, clockspeed c);
+void uart_write_char(char byte);
+void uart_write_string(const char *str);
+void uart_write_newline(void);
+void uart_write_line(const char *str);
+void uart_handle_rcv_int(void);
+void uart_handle_tx_int(void);
+char uart_read_char(void);
+unsigned char uart_numof_bytes_in_buffer(void);
+
+void uart_flush_buffer(void);
+# 21 "RV.c" 2
 
 
 
+void setup(void);
+void empty_comb(void);
+__attribute__((inline)) void button_interrupt(void);
 
-
-
-
-void Stepper(int num_of_steps) {
-    step_number = 0;
-    direction = 0;
-    number_of_steps = num_of_steps;
-
-
-    TRISCbits.TRISC0 = 0;
-    TRISCbits.TRISC1 = 0;
-    TRISCbits.TRISC2 = 0;
-    TRISCbits.TRISC3 = 0;
+void __attribute__((picinterrupt(("")))) ISR(void) {
+    uart_handle_rcv_int();
+    uart_handle_tx_int();
 }
 
+void main(void) {
 
-
-
-
-void step(int steps_to_move) {
-
-
-
-    int steps_left = abs(steps_to_move);
-
-
-    if (steps_to_move > 0) {
-        direction = 1;
-    }
-    if (steps_to_move < 0) {
-        direction = 0;
-    }
-
-
-
-    while (steps_left > 0) {
-        _delay((unsigned long)((2)*(1000000/4000.0)));
-
-
-        if (direction == 1) {
-            step_number++;
-            if (step_number == number_of_steps) {
-                step_number = 0;
+    setup();
+    Stepper(512);
+    setup();
+    empty_comb();
+    while (1) {
+        char uart_char = uart_read_char();
+        if (uart_char) {
+            if (comb1 == 0x00) {
+                comb1 = uart_char;
+            } else if (comb2 == 0x00) {
+                comb2 = uart_char;
+            } else if (comb3 == 0x00) {
+                comb3 = uart_char;
+            } else if (comb4 == 0x00) {
+                comb4 = uart_char;
+            } else if (comb5 == 0x00) {
+                comb5 = uart_char;
+            } else if (comb6 == 0x00) {
+                comb6 = uart_char;
+            } else if (comb7 == 0x00) {
+                comb7 = uart_char;
             }
-        } else {
-            if (step_number == 0) {
-                step_number = number_of_steps;
-            }
-            step_number--;
         }
 
-        steps_left--;
 
-        stepMotor(step_number % 4);
+        if (comb1 == 0x72 && comb2 == 0x76 && comb6 == 0x72 && comb7 == 0x76) {
+                        if (comb5 == 0x76) {
+                stepvar = comb3 * comb4;
+            } else if (comb5 == 0x61) {
+                stepvar = comb3 * comb4 * -1;
+            }
+
+            empty_comb();
+        }
+
+        if (comb1 == 0x73 && comb2 == 0x73 && comb3 == 0x73 && comb4 == 0x73 && comb5 == 0x73 && comb6 == 0x73 && comb7 == 0x73) {
+            step(stepvar);
+            empty_comb();
+        }
+
+        if (comb7 != 0x00) {
+            empty_comb();
+        }
+
+        if (comb1 != 0x72 && comb1 != 0x73 && comb1 != 0x00) {
+            empty_comb();
+        } else if (comb2 != 0x76 && comb2 != 0x73 && comb2 != 0x00) {
+            empty_comb();
+        }
     }
 
+    return;
 }
 
+void empty_comb(void) {
+    comb1 = 0x00;
+    comb2 = 0x00;
+    comb3 = 0x00;
+    comb4 = 0x00;
+    comb5 = 0x00;
+    comb6 = 0x00;
+    comb7 = 0x00;
+}
 
+void setup(void) {
+    OSCCONbits.IRCF = 0b1011;
+    OSCCONbits.SCS = 0b00;
+    OSCCONbits.SPLLEN = 0;
 
+    GIE = 1;
+    PEIE = 1;
 
-void stepMotor(int thisStep) {
-    switch (thisStep) {
-        case 0:
-            LATCbits.LATC0 = 1;
-            LATCbits.LATC1 = 0;
-            LATCbits.LATC2 = 1;
-            LATCbits.LATC3 = 0;
-            break;
-        case 1:
-            LATCbits.LATC0 = 0;
-            LATCbits.LATC1 = 1;
-            LATCbits.LATC2 = 1;
-            LATCbits.LATC3 = 0;
-            break;
-        case 2:
-            LATCbits.LATC0 = 0;
-            LATCbits.LATC1 = 1;
-            LATCbits.LATC2 = 0;
-            LATCbits.LATC3 = 1;
-            break;
-        case 3:
-            LATCbits.LATC0 = 1;
-            LATCbits.LATC1 = 0;
-            LATCbits.LATC2 = 0;
-            LATCbits.LATC3 = 1;
-            break;
+    if (!uart_init(3, 1)) {
     }
 }
