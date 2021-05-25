@@ -1,4 +1,6 @@
-import wielinstrucitie, rijinstructie, wiel, math
+import math
+from src import rijinstructie, wielinstrucitie
+
 
 class Instructiemaker:
     def __init__(self):

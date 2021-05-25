@@ -1,4 +1,4 @@
-import wiel, pad, instructiemaker, uarthandeler
+from src import instructiemaker, wiel, pad, uarthandeler
 
 if __name__ == '__main__':
         volgen = pad.Pad()

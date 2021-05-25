@@ -1,5 +1,3 @@
-import rijinstructie
-
 class Uarthandeler:
     def __init__(self):
         help = 0
