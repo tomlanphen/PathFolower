@@ -31,9 +31,10 @@ void __interrupt() ISR(void) {
 }
 
 void main(void) {
-    //    stepvar = -2048; //volle ratoatie
+    //    stepvar = -2052; //volle ratoatie
     setup();
-    Stepper(512);
+//    Stepper(512);
+    Stepper(2052);
     setup();
     empty_comb();
     while (1) {
@@ -100,7 +101,10 @@ void setup(void) {
     OSCCONbits.IRCF = 0b1011; //1MHz
     OSCCONbits.SCS = 0b00;
     OSCCONbits.SPLLEN = 0;
+    TRISCbits.TRISC6 = 0; // setup RAC6 as output
 
+    LATCbits.LATC6 = 0;
+    
     GIE = 1;
     PEIE = 1;
 

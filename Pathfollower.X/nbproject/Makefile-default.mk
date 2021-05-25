@@ -57,17 +57,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=stepperlib.c uartlib.c LV.c
+SOURCEFILES_QUOTED_IF_SPACED=stepperlib.c uartlib.c LA.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/stepperlib.p1 ${OBJECTDIR}/uartlib.p1 ${OBJECTDIR}/LV.p1
-POSSIBLE_DEPFILES=${OBJECTDIR}/stepperlib.p1.d ${OBJECTDIR}/uartlib.p1.d ${OBJECTDIR}/LV.p1.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/stepperlib.p1 ${OBJECTDIR}/uartlib.p1 ${OBJECTDIR}/LA.p1
+POSSIBLE_DEPFILES=${OBJECTDIR}/stepperlib.p1.d ${OBJECTDIR}/uartlib.p1.d ${OBJECTDIR}/LA.p1.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/stepperlib.p1 ${OBJECTDIR}/uartlib.p1 ${OBJECTDIR}/LV.p1
+OBJECTFILES=${OBJECTDIR}/stepperlib.p1 ${OBJECTDIR}/uartlib.p1 ${OBJECTDIR}/LA.p1
 
 # Source Files
-SOURCEFILES=stepperlib.c uartlib.c LV.c
+SOURCEFILES=stepperlib.c uartlib.c LA.c
 
 
 
@@ -110,13 +110,13 @@ ${OBJECTDIR}/uartlib.p1: uartlib.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/uartlib.d ${OBJECTDIR}/uartlib.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/uartlib.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/LV.p1: LV.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/LA.p1: LA.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/LV.p1.d 
-	@${RM} ${OBJECTDIR}/LV.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/LV.p1 LV.c 
-	@-${MV} ${OBJECTDIR}/LV.d ${OBJECTDIR}/LV.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/LV.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/LA.p1.d 
+	@${RM} ${OBJECTDIR}/LA.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c  -D__DEBUG=1   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/LA.p1 LA.c 
+	@-${MV} ${OBJECTDIR}/LA.d ${OBJECTDIR}/LA.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/LA.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 else
 ${OBJECTDIR}/stepperlib.p1: stepperlib.c  nbproject/Makefile-${CND_CONF}.mk 
@@ -135,13 +135,13 @@ ${OBJECTDIR}/uartlib.p1: uartlib.c  nbproject/Makefile-${CND_CONF}.mk
 	@-${MV} ${OBJECTDIR}/uartlib.d ${OBJECTDIR}/uartlib.p1.d 
 	@${FIXDEPS} ${OBJECTDIR}/uartlib.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
-${OBJECTDIR}/LV.p1: LV.c  nbproject/Makefile-${CND_CONF}.mk 
+${OBJECTDIR}/LA.p1: LA.c  nbproject/Makefile-${CND_CONF}.mk 
 	@${MKDIR} "${OBJECTDIR}" 
-	@${RM} ${OBJECTDIR}/LV.p1.d 
-	@${RM} ${OBJECTDIR}/LV.p1 
-	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/LV.p1 LV.c 
-	@-${MV} ${OBJECTDIR}/LV.d ${OBJECTDIR}/LV.p1.d 
-	@${FIXDEPS} ${OBJECTDIR}/LV.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
+	@${RM} ${OBJECTDIR}/LA.p1.d 
+	@${RM} ${OBJECTDIR}/LA.p1 
+	${MP_CC} $(MP_EXTRA_CC_PRE) -mcpu=$(MP_PROCESSOR_OPTION) -c   -mdfp="${DFP_DIR}/xc8"  -fno-short-double -fno-short-float -O0 -fasmfile -maddrqual=ignore -xassembler-with-cpp -mwarn=-3 -Wa,-a -DXPRJ_default=$(CND_CONF)  -msummary=-psect,-class,+mem,-hex,-file  -ginhx032 -Wl,--data-init -mno-keep-startup -mno-osccal -mno-resetbits -mno-save-resetbits -mno-download -mno-stackcall $(COMPARISON_BUILD)  -std=c99 -gdwarf-3 -mstack=compiled:auto:auto     -o ${OBJECTDIR}/LA.p1 LA.c 
+	@-${MV} ${OBJECTDIR}/LA.d ${OBJECTDIR}/LA.p1.d 
+	@${FIXDEPS} ${OBJECTDIR}/LA.p1.d $(SILENT) -rsi ${MP_CC_DIR}../  
 	
 endif
 

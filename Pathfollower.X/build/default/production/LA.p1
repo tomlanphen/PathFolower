@@ -38,14 +38,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1788
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 1788: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x099)));
 [v _OSCCONbits `VS97 ~T0 @X0 0 e@153 ]
+"1280
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 1280:     struct {
+[s S77 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S77 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1279
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 1279: typedef union {
+[u S76 `S77 1 ]
+[n S76 . . ]
+"1291
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 1291: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x08E)));
+[v _TRISCbits `VS76 ~T0 @X0 0 e@142 ]
+"2189
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 2189:     struct {
+[s S118 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S118 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
+"2188
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 2188: typedef union {
+[u S117 `S118 1 ]
+[n S117 . . ]
+"2200
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 2200: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
+[v _LATCbits `VS117 ~T0 @X0 0 e@270 ]
 "7533
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 7533: extern volatile __bit GIE __attribute__((address(0x5F)));
 [v _GIE `Vb ~T0 @X0 0 e@95 ]
 "7944
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 7944: extern volatile __bit PEIE __attribute__((address(0x5E)));
 [v _PEIE `Vb ~T0 @X0 0 e@94 ]
-"107 LA.c
-[; ;LA.c: 107:     if (!uart_init(3, 1)) {
+"111 LA.c
+[; ;LA.c: 111:     if (!uart_init(3, 1)) {
 [c E2583 0 1 .. ]
 [n E2583 . false true  ]
 "26 ./uartlib.h
@@ -654,96 +676,96 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35
 [; ;LA.c: 35:     setup();
 [e ( _setup ..  ]
-"36
-[; ;LA.c: 36:     Stepper(512);
-[e ( _Stepper (1 -> 512 `i ]
 "37
-[; ;LA.c: 37:     setup();
-[e ( _setup ..  ]
+[; ;LA.c: 37:     Stepper(2052);
+[e ( _Stepper (1 -> 2052 `i ]
 "38
-[; ;LA.c: 38:     empty_comb();
-[e ( _empty_comb ..  ]
+[; ;LA.c: 38:     setup();
+[e ( _setup ..  ]
 "39
-[; ;LA.c: 39:     while (1) {
+[; ;LA.c: 39:     empty_comb();
+[e ( _empty_comb ..  ]
+"40
+[; ;LA.c: 40:     while (1) {
 [e :U 375 ]
 {
-"40
-[; ;LA.c: 40:         char uart_char = uart_read_char();
+"41
+[; ;LA.c: 41:         char uart_char = uart_read_char();
 [v _uart_char `uc ~T0 @X0 1 a ]
 [e = _uart_char ( _uart_read_char ..  ]
-"41
-[; ;LA.c: 41:         if (uart_char) {
+"42
+[; ;LA.c: 42:         if (uart_char) {
 [e $ ! != -> _uart_char `i -> 0 `i 377  ]
 {
-"42
-[; ;LA.c: 42:             if (comb1 == 0x00) {
+"43
+[; ;LA.c: 43:             if (comb1 == 0x00) {
 [e $ ! == -> _comb1 `i -> 0 `i 378  ]
 {
-"43
-[; ;LA.c: 43:                 comb1 = uart_char;
-[e = _comb1 _uart_char ]
 "44
-[; ;LA.c: 44:             } else if (comb2 == 0x00) {
+[; ;LA.c: 44:                 comb1 = uart_char;
+[e = _comb1 _uart_char ]
+"45
+[; ;LA.c: 45:             } else if (comb2 == 0x00) {
 }
 [e $U 379  ]
 [e :U 378 ]
 [e $ ! == -> _comb2 `i -> 0 `i 380  ]
 {
-"45
-[; ;LA.c: 45:                 comb2 = uart_char;
-[e = _comb2 _uart_char ]
 "46
-[; ;LA.c: 46:             } else if (comb3 == 0x00) {
+[; ;LA.c: 46:                 comb2 = uart_char;
+[e = _comb2 _uart_char ]
+"47
+[; ;LA.c: 47:             } else if (comb3 == 0x00) {
 }
 [e $U 381  ]
 [e :U 380 ]
 [e $ ! == -> _comb3 `i -> 0 `i 382  ]
 {
-"47
-[; ;LA.c: 47:                 comb3 = uart_char;
-[e = _comb3 _uart_char ]
 "48
-[; ;LA.c: 48:             } else if (comb4 == 0x00) {
+[; ;LA.c: 48:                 comb3 = uart_char;
+[e = _comb3 _uart_char ]
+"49
+[; ;LA.c: 49:             } else if (comb4 == 0x00) {
 }
 [e $U 383  ]
 [e :U 382 ]
 [e $ ! == -> _comb4 `i -> 0 `i 384  ]
 {
-"49
-[; ;LA.c: 49:                 comb4 = uart_char;
-[e = _comb4 _uart_char ]
 "50
-[; ;LA.c: 50:             } else if (comb5 == 0x00) {
+[; ;LA.c: 50:                 comb4 = uart_char;
+[e = _comb4 _uart_char ]
+"51
+[; ;LA.c: 51:             } else if (comb5 == 0x00) {
 }
 [e $U 385  ]
 [e :U 384 ]
 [e $ ! == -> _comb5 `i -> 0 `i 386  ]
 {
-"51
-[; ;LA.c: 51:                 comb5 = uart_char;
-[e = _comb5 _uart_char ]
 "52
-[; ;LA.c: 52:             } else if (comb6 == 0x00) {
+[; ;LA.c: 52:                 comb5 = uart_char;
+[e = _comb5 _uart_char ]
+"53
+[; ;LA.c: 53:             } else if (comb6 == 0x00) {
 }
 [e $U 387  ]
 [e :U 386 ]
 [e $ ! == -> _comb6 `i -> 0 `i 388  ]
 {
-"53
-[; ;LA.c: 53:                 comb6 = uart_char;
-[e = _comb6 _uart_char ]
 "54
-[; ;LA.c: 54:             } else if (comb7 == 0x00) {
+[; ;LA.c: 54:                 comb6 = uart_char;
+[e = _comb6 _uart_char ]
+"55
+[; ;LA.c: 55:             } else if (comb7 == 0x00) {
 }
 [e $U 389  ]
 [e :U 388 ]
 [e $ ! == -> _comb7 `i -> 0 `i 390  ]
 {
-"55
-[; ;LA.c: 55:                 comb7 = uart_char;
-[e = _comb7 _uart_char ]
 "56
-[; ;LA.c: 56:             }
+[; ;LA.c: 56:                 comb7 = uart_char;
+[e = _comb7 _uart_char ]
+"57
+[; ;LA.c: 57:             }
 }
 [e :U 390 ]
 [e :U 389 ]
@@ -752,164 +774,170 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 383 ]
 [e :U 381 ]
 [e :U 379 ]
-"57
-[; ;LA.c: 57:         }
+"58
+[; ;LA.c: 58:         }
 }
 [e :U 377 ]
-"60
-[; ;LA.c: 60:         if (comb1 == 0x6C && comb2 == 0x61 && comb6 == 0x6C && comb7 == 0x61) {
+"61
+[; ;LA.c: 61:         if (comb1 == 0x6C && comb2 == 0x61 && comb6 == 0x6C && comb7 == 0x61) {
 [e $ ! && && && == -> _comb1 `i -> 108 `i == -> _comb2 `i -> 97 `i == -> _comb6 `i -> 108 `i == -> _comb7 `i -> 97 `i 391  ]
 {
-"61
-[; ;LA.c: 61:                         if (comb5 == 0x76) {
+"62
+[; ;LA.c: 62:                         if (comb5 == 0x76) {
 [e $ ! == -> _comb5 `i -> 118 `i 392  ]
 {
-"62
-[; ;LA.c: 62:                 stepvar = comb3 * comb4 * -1;
-[e = _stepvar * * -> _comb3 `i -> _comb4 `i -U -> 1 `i ]
 "63
-[; ;LA.c: 63:             } else if (comb5 == 0x61) {
+[; ;LA.c: 63:                 stepvar = comb3 * comb4 * -1;
+[e = _stepvar * * -> _comb3 `i -> _comb4 `i -U -> 1 `i ]
+"64
+[; ;LA.c: 64:             } else if (comb5 == 0x61) {
 }
 [e $U 393  ]
 [e :U 392 ]
 [e $ ! == -> _comb5 `i -> 97 `i 394  ]
 {
-"64
-[; ;LA.c: 64:                 stepvar = comb3 * comb4;
-[e = _stepvar * -> _comb3 `i -> _comb4 `i ]
 "65
-[; ;LA.c: 65:             }
+[; ;LA.c: 65:                 stepvar = comb3 * comb4;
+[e = _stepvar * -> _comb3 `i -> _comb4 `i ]
+"66
+[; ;LA.c: 66:             }
 }
 [e :U 394 ]
 [e :U 393 ]
-"67
-[; ;LA.c: 67:             empty_comb();
-[e ( _empty_comb ..  ]
 "68
-[; ;LA.c: 68:         }
+[; ;LA.c: 68:             empty_comb();
+[e ( _empty_comb ..  ]
+"69
+[; ;LA.c: 69:         }
 }
 [e :U 391 ]
-"70
-[; ;LA.c: 70:         if (comb1 == 0x73 && comb2 == 0x73 && comb3 == 0x73 && comb4 == 0x73 && comb5 == 0x73 && comb6 == 0x73 && comb7 == 0x73) {
+"71
+[; ;LA.c: 71:         if (comb1 == 0x73 && comb2 == 0x73 && comb3 == 0x73 && comb4 == 0x73 && comb5 == 0x73 && comb6 == 0x73 && comb7 == 0x73) {
 [e $ ! && && && && && && == -> _comb1 `i -> 115 `i == -> _comb2 `i -> 115 `i == -> _comb3 `i -> 115 `i == -> _comb4 `i -> 115 `i == -> _comb5 `i -> 115 `i == -> _comb6 `i -> 115 `i == -> _comb7 `i -> 115 `i 395  ]
 {
-"71
-[; ;LA.c: 71:             step(stepvar);
-[e ( _step (1 _stepvar ]
 "72
-[; ;LA.c: 72:             empty_comb();
-[e ( _empty_comb ..  ]
+[; ;LA.c: 72:             step(stepvar);
+[e ( _step (1 _stepvar ]
 "73
-[; ;LA.c: 73:         }
+[; ;LA.c: 73:             empty_comb();
+[e ( _empty_comb ..  ]
+"74
+[; ;LA.c: 74:         }
 }
 [e :U 395 ]
-"75
-[; ;LA.c: 75:         if (comb7 != 0x00) {
+"76
+[; ;LA.c: 76:         if (comb7 != 0x00) {
 [e $ ! != -> _comb7 `i -> 0 `i 396  ]
 {
-"76
-[; ;LA.c: 76:             empty_comb();
-[e ( _empty_comb ..  ]
 "77
-[; ;LA.c: 77:         }
+[; ;LA.c: 77:             empty_comb();
+[e ( _empty_comb ..  ]
+"78
+[; ;LA.c: 78:         }
 }
 [e :U 396 ]
-"79
-[; ;LA.c: 79:         if (comb1 != 0x6C && comb1 != 0x73 && comb1 != 0x00) {
+"80
+[; ;LA.c: 80:         if (comb1 != 0x6C && comb1 != 0x73 && comb1 != 0x00) {
 [e $ ! && && != -> _comb1 `i -> 108 `i != -> _comb1 `i -> 115 `i != -> _comb1 `i -> 0 `i 397  ]
 {
-"80
-[; ;LA.c: 80:             empty_comb();
-[e ( _empty_comb ..  ]
 "81
-[; ;LA.c: 81:         } else if (comb2 != 0x61 && comb2 != 0x73 && comb2 != 0x00) {
+[; ;LA.c: 81:             empty_comb();
+[e ( _empty_comb ..  ]
+"82
+[; ;LA.c: 82:         } else if (comb2 != 0x61 && comb2 != 0x73 && comb2 != 0x00) {
 }
 [e $U 398  ]
 [e :U 397 ]
 [e $ ! && && != -> _comb2 `i -> 97 `i != -> _comb2 `i -> 115 `i != -> _comb2 `i -> 0 `i 399  ]
 {
-"82
-[; ;LA.c: 82:             empty_comb();
-[e ( _empty_comb ..  ]
 "83
-[; ;LA.c: 83:         }
+[; ;LA.c: 83:             empty_comb();
+[e ( _empty_comb ..  ]
+"84
+[; ;LA.c: 84:         }
 }
 [e :U 399 ]
 [e :U 398 ]
-"84
-[; ;LA.c: 84:     }
+"85
+[; ;LA.c: 85:     }
 }
 [e :U 374 ]
 [e $U 375  ]
 [e :U 376 ]
-"86
-[; ;LA.c: 86:     return;
-[e $UE 373  ]
 "87
-[; ;LA.c: 87: }
+[; ;LA.c: 87:     return;
+[e $UE 373  ]
+"88
+[; ;LA.c: 88: }
 [e :UE 373 ]
 }
-"89
-[; ;LA.c: 89: void empty_comb(void) {
+"90
+[; ;LA.c: 90: void empty_comb(void) {
 [v _empty_comb `(v ~T0 @X0 1 ef ]
 {
 [e :U _empty_comb ]
 [f ]
-"90
-[; ;LA.c: 90:     comb1 = 0x00;
-[e = _comb1 -> -> 0 `i `uc ]
 "91
-[; ;LA.c: 91:     comb2 = 0x00;
-[e = _comb2 -> -> 0 `i `uc ]
+[; ;LA.c: 91:     comb1 = 0x00;
+[e = _comb1 -> -> 0 `i `uc ]
 "92
-[; ;LA.c: 92:     comb3 = 0x00;
-[e = _comb3 -> -> 0 `i `uc ]
+[; ;LA.c: 92:     comb2 = 0x00;
+[e = _comb2 -> -> 0 `i `uc ]
 "93
-[; ;LA.c: 93:     comb4 = 0x00;
-[e = _comb4 -> -> 0 `i `uc ]
+[; ;LA.c: 93:     comb3 = 0x00;
+[e = _comb3 -> -> 0 `i `uc ]
 "94
-[; ;LA.c: 94:     comb5 = 0x00;
-[e = _comb5 -> -> 0 `i `uc ]
+[; ;LA.c: 94:     comb4 = 0x00;
+[e = _comb4 -> -> 0 `i `uc ]
 "95
-[; ;LA.c: 95:     comb6 = 0x00;
-[e = _comb6 -> -> 0 `i `uc ]
+[; ;LA.c: 95:     comb5 = 0x00;
+[e = _comb5 -> -> 0 `i `uc ]
 "96
-[; ;LA.c: 96:     comb7 = 0x00;
-[e = _comb7 -> -> 0 `i `uc ]
+[; ;LA.c: 96:     comb6 = 0x00;
+[e = _comb6 -> -> 0 `i `uc ]
 "97
-[; ;LA.c: 97: }
+[; ;LA.c: 97:     comb7 = 0x00;
+[e = _comb7 -> -> 0 `i `uc ]
+"98
+[; ;LA.c: 98: }
 [e :UE 400 ]
 }
-"99
-[; ;LA.c: 99: void setup(void) {
+"100
+[; ;LA.c: 100: void setup(void) {
 [v _setup `(v ~T0 @X0 1 ef ]
 {
 [e :U _setup ]
 [f ]
-"100
-[; ;LA.c: 100:     OSCCONbits.IRCF = 0b1011;
-[e = . . _OSCCONbits 1 2 -> -> 11 `i `uc ]
 "101
-[; ;LA.c: 101:     OSCCONbits.SCS = 0b00;
-[e = . . _OSCCONbits 1 0 -> -> 0 `i `uc ]
+[; ;LA.c: 101:     OSCCONbits.IRCF = 0b1011;
+[e = . . _OSCCONbits 1 2 -> -> 11 `i `uc ]
 "102
-[; ;LA.c: 102:     OSCCONbits.SPLLEN = 0;
+[; ;LA.c: 102:     OSCCONbits.SCS = 0b00;
+[e = . . _OSCCONbits 1 0 -> -> 0 `i `uc ]
+"103
+[; ;LA.c: 103:     OSCCONbits.SPLLEN = 0;
 [e = . . _OSCCONbits 0 7 -> -> 0 `i `uc ]
 "104
-[; ;LA.c: 104:     GIE = 1;
+[; ;LA.c: 104:     TRISCbits.TRISC6 = 0;
+[e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
+"106
+[; ;LA.c: 106:     LATCbits.LATC6 = 0;
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+"108
+[; ;LA.c: 108:     GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
-"105
-[; ;LA.c: 105:     PEIE = 1;
+"109
+[; ;LA.c: 109:     PEIE = 1;
 [e = _PEIE -> -> 1 `i `b ]
-"107
-[; ;LA.c: 107:     if (!uart_init(3, 1)) {
+"111
+[; ;LA.c: 111:     if (!uart_init(3, 1)) {
 [e $ ! ! != -> ( _uart_init (2 , -> -> 3 `i `uc -> -> 1 `i `uc `ui -> -> 0 `i `ui 402  ]
 {
-"108
-[; ;LA.c: 108:     }
+"112
+[; ;LA.c: 112:     }
 }
 [e :U 402 ]
-"109
-[; ;LA.c: 109: }
+"113
+[; ;LA.c: 113: }
 [e :UE 401 ]
 }

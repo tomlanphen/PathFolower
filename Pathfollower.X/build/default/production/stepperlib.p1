@@ -10,17 +10,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1291
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 1291: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x08E)));
 [v _TRISCbits `VS76 ~T0 @X0 0 e@142 ]
-"51 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdlib.h
-[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdlib.h: 51: int abs (int);
-[v _abs `(i ~T0 @X0 0 ef1`i ]
-[v F2555 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\pic.h
-[v __delay `JF2555 ~T0 @X0 0 e ]
-[p i __delay ]
-"12 ./stepperlib.h
-[; ;./stepperlib.h: 12: void stepMotor(int this_step);
-[v _stepMotor `(v ~T0 @X0 0 ef1`i ]
-"2189 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h
+"2189
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 2189:     struct {
 [s S118 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S118 . LATC0 LATC1 LATC2 LATC3 LATC4 LATC5 LATC6 LATC7 ]
@@ -31,6 +21,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2200
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 2200: extern volatile LATCbits_t LATCbits __attribute__((address(0x10E)));
 [v _LATCbits `VS117 ~T0 @X0 0 e@270 ]
+"51 C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdlib.h
+[; ;C:\Program Files\Microchip\xc8\v2.32\pic\include\c99\stdlib.h: 51: int abs (int);
+[v _abs `(i ~T0 @X0 0 ef1`i ]
+[v F2555 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\pic.h
+[v __delay `JF2555 ~T0 @X0 0 e ]
+[p i __delay ]
+"12 ./stepperlib.h
+[; ;./stepperlib.h: 12: void stepMotor(int this_step);
+[v _stepMotor `(v ~T0 @X0 0 ef1`i ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -571,185 +571,191 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _step ]
 [v _steps_to_move `i ~T0 @X0 1 r1 ]
 [f ]
-"29
-[; ;stepperlib.c: 29:     int steps_left = abs(steps_to_move);
+"26
+[; ;stepperlib.c: 26:     LATCbits.LATC6 = 1;
+[e = . . _LATCbits 0 6 -> -> 1 `i `uc ]
+"31
+[; ;stepperlib.c: 31:     int steps_left = abs(steps_to_move);
 [v _steps_left `i ~T0 @X0 1 a ]
 [e = _steps_left ( _abs (1 _steps_to_move ]
-"32
-[; ;stepperlib.c: 32:     if (steps_to_move > 0) {
+"34
+[; ;stepperlib.c: 34:     if (steps_to_move > 0) {
 [e $ ! > _steps_to_move -> 0 `i 374  ]
 {
-"33
-[; ;stepperlib.c: 33:         direction = 1;
+"35
+[; ;stepperlib.c: 35:         direction = 1;
 [e = _direction -> 1 `i ]
-"34
-[; ;stepperlib.c: 34:     }
+"36
+[; ;stepperlib.c: 36:     }
 }
 [e :U 374 ]
-"35
-[; ;stepperlib.c: 35:     if (steps_to_move < 0) {
+"37
+[; ;stepperlib.c: 37:     if (steps_to_move < 0) {
 [e $ ! < _steps_to_move -> 0 `i 375  ]
 {
-"36
-[; ;stepperlib.c: 36:         direction = 0;
+"38
+[; ;stepperlib.c: 38:         direction = 0;
 [e = _direction -> 0 `i ]
-"37
-[; ;stepperlib.c: 37:     }
+"39
+[; ;stepperlib.c: 39:     }
 }
 [e :U 375 ]
-"41
-[; ;stepperlib.c: 41:     while (steps_left > 0) {
+"43
+[; ;stepperlib.c: 43:     while (steps_left > 0) {
 [e $U 376  ]
 [e :U 377 ]
 {
-"42
-[; ;stepperlib.c: 42:         _delay((unsigned long)((2)*(1000000/4000.0)));
+"44
+[; ;stepperlib.c: 44:         _delay((unsigned long)((2)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 2 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"45
-[; ;stepperlib.c: 45:         if (direction == 1) {
+"47
+[; ;stepperlib.c: 47:         if (direction == 1) {
 [e $ ! == _direction -> 1 `i 379  ]
 {
-"46
-[; ;stepperlib.c: 46:             step_number++;
+"48
+[; ;stepperlib.c: 48:             step_number++;
 [e ++ _step_number -> 1 `i ]
-"47
-[; ;stepperlib.c: 47:             if (step_number == number_of_steps) {
+"49
+[; ;stepperlib.c: 49:             if (step_number == number_of_steps) {
 [e $ ! == _step_number _number_of_steps 380  ]
 {
-"48
-[; ;stepperlib.c: 48:                 step_number = 0;
+"50
+[; ;stepperlib.c: 50:                 step_number = 0;
 [e = _step_number -> 0 `i ]
-"49
-[; ;stepperlib.c: 49:             }
+"51
+[; ;stepperlib.c: 51:             }
 }
 [e :U 380 ]
-"50
-[; ;stepperlib.c: 50:         } else {
+"52
+[; ;stepperlib.c: 52:         } else {
 }
 [e $U 381  ]
 [e :U 379 ]
 {
-"51
-[; ;stepperlib.c: 51:             if (step_number == 0) {
+"53
+[; ;stepperlib.c: 53:             if (step_number == 0) {
 [e $ ! == _step_number -> 0 `i 382  ]
 {
-"52
-[; ;stepperlib.c: 52:                 step_number = number_of_steps;
+"54
+[; ;stepperlib.c: 54:                 step_number = number_of_steps;
 [e = _step_number _number_of_steps ]
-"53
-[; ;stepperlib.c: 53:             }
+"55
+[; ;stepperlib.c: 55:             }
 }
 [e :U 382 ]
-"54
-[; ;stepperlib.c: 54:             step_number--;
+"56
+[; ;stepperlib.c: 56:             step_number--;
 [e -- _step_number -> 1 `i ]
-"55
-[; ;stepperlib.c: 55:         }
+"57
+[; ;stepperlib.c: 57:         }
 }
 [e :U 381 ]
-"57
-[; ;stepperlib.c: 57:         steps_left--;
-[e -- _steps_left -> 1 `i ]
 "59
-[; ;stepperlib.c: 59:         stepMotor(step_number % 4);
+[; ;stepperlib.c: 59:         steps_left--;
+[e -- _steps_left -> 1 `i ]
+"61
+[; ;stepperlib.c: 61:         stepMotor(step_number % 4);
 [e ( _stepMotor (1 % _step_number -> 4 `i ]
-"60
-[; ;stepperlib.c: 60:     }
+"62
+[; ;stepperlib.c: 62:     }
 }
 [e :U 376 ]
-"41
-[; ;stepperlib.c: 41:     while (steps_left > 0) {
+"43
+[; ;stepperlib.c: 43:     while (steps_left > 0) {
 [e $ > _steps_left -> 0 `i 377  ]
 [e :U 378 ]
-"62
-[; ;stepperlib.c: 62: }
+"64
+[; ;stepperlib.c: 64:     LATCbits.LATC6 = 0;
+[e = . . _LATCbits 0 6 -> -> 0 `i `uc ]
+"65
+[; ;stepperlib.c: 65: }
 [e :UE 373 ]
 }
-"67
-[; ;stepperlib.c: 67: void stepMotor(int thisStep) {
+"70
+[; ;stepperlib.c: 70: void stepMotor(int thisStep) {
 [v _stepMotor `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _stepMotor ]
 [v _thisStep `i ~T0 @X0 1 r1 ]
 [f ]
-"68
-[; ;stepperlib.c: 68:     switch (thisStep) {
+"71
+[; ;stepperlib.c: 71:     switch (thisStep) {
 [e $U 385  ]
 {
-"69
-[; ;stepperlib.c: 69:         case 0:
-[e :U 386 ]
-"70
-[; ;stepperlib.c: 70:             LATCbits.LATC0 = 1;
-[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-"71
-[; ;stepperlib.c: 71:             LATCbits.LATC1 = 0;
-[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 "72
-[; ;stepperlib.c: 72:             LATCbits.LATC2 = 1;
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+[; ;stepperlib.c: 72:         case 0:
+[e :U 386 ]
 "73
-[; ;stepperlib.c: 73:             LATCbits.LATC3 = 0;
-[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
-"74
-[; ;stepperlib.c: 74:             break;
-[e $U 384  ]
-"75
-[; ;stepperlib.c: 75:         case 1:
-[e :U 387 ]
-"76
-[; ;stepperlib.c: 76:             LATCbits.LATC0 = 0;
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-"77
-[; ;stepperlib.c: 77:             LATCbits.LATC1 = 1;
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-"78
-[; ;stepperlib.c: 78:             LATCbits.LATC2 = 1;
-[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
-"79
-[; ;stepperlib.c: 79:             LATCbits.LATC3 = 0;
-[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
-"80
-[; ;stepperlib.c: 80:             break;
-[e $U 384  ]
-"81
-[; ;stepperlib.c: 81:         case 2:
-[e :U 388 ]
-"82
-[; ;stepperlib.c: 82:             LATCbits.LATC0 = 0;
-[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
-"83
-[; ;stepperlib.c: 83:             LATCbits.LATC1 = 1;
-[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
-"84
-[; ;stepperlib.c: 84:             LATCbits.LATC2 = 0;
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-"85
-[; ;stepperlib.c: 85:             LATCbits.LATC3 = 1;
-[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
-"86
-[; ;stepperlib.c: 86:             break;
-[e $U 384  ]
-"87
-[; ;stepperlib.c: 87:         case 3:
-[e :U 389 ]
-"88
-[; ;stepperlib.c: 88:             LATCbits.LATC0 = 1;
+[; ;stepperlib.c: 73:             LATCbits.LATC0 = 1;
 [e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
-"89
-[; ;stepperlib.c: 89:             LATCbits.LATC1 = 0;
+"74
+[; ;stepperlib.c: 74:             LATCbits.LATC1 = 0;
 [e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
-"90
-[; ;stepperlib.c: 90:             LATCbits.LATC2 = 0;
-[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
-"91
-[; ;stepperlib.c: 91:             LATCbits.LATC3 = 1;
-[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
-"92
-[; ;stepperlib.c: 92:             break;
+"75
+[; ;stepperlib.c: 75:             LATCbits.LATC2 = 1;
+[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+"76
+[; ;stepperlib.c: 76:             LATCbits.LATC3 = 0;
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+"77
+[; ;stepperlib.c: 77:             break;
 [e $U 384  ]
+"78
+[; ;stepperlib.c: 78:         case 1:
+[e :U 387 ]
+"79
+[; ;stepperlib.c: 79:             LATCbits.LATC0 = 0;
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+"80
+[; ;stepperlib.c: 80:             LATCbits.LATC1 = 1;
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+"81
+[; ;stepperlib.c: 81:             LATCbits.LATC2 = 1;
+[e = . . _LATCbits 0 2 -> -> 1 `i `uc ]
+"82
+[; ;stepperlib.c: 82:             LATCbits.LATC3 = 0;
+[e = . . _LATCbits 0 3 -> -> 0 `i `uc ]
+"83
+[; ;stepperlib.c: 83:             break;
+[e $U 384  ]
+"84
+[; ;stepperlib.c: 84:         case 2:
+[e :U 388 ]
+"85
+[; ;stepperlib.c: 85:             LATCbits.LATC0 = 0;
+[e = . . _LATCbits 0 0 -> -> 0 `i `uc ]
+"86
+[; ;stepperlib.c: 86:             LATCbits.LATC1 = 1;
+[e = . . _LATCbits 0 1 -> -> 1 `i `uc ]
+"87
+[; ;stepperlib.c: 87:             LATCbits.LATC2 = 0;
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+"88
+[; ;stepperlib.c: 88:             LATCbits.LATC3 = 1;
+[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
+"89
+[; ;stepperlib.c: 89:             break;
+[e $U 384  ]
+"90
+[; ;stepperlib.c: 90:         case 3:
+[e :U 389 ]
+"91
+[; ;stepperlib.c: 91:             LATCbits.LATC0 = 1;
+[e = . . _LATCbits 0 0 -> -> 1 `i `uc ]
+"92
+[; ;stepperlib.c: 92:             LATCbits.LATC1 = 0;
+[e = . . _LATCbits 0 1 -> -> 0 `i `uc ]
 "93
-[; ;stepperlib.c: 93:     }
+[; ;stepperlib.c: 93:             LATCbits.LATC2 = 0;
+[e = . . _LATCbits 0 2 -> -> 0 `i `uc ]
+"94
+[; ;stepperlib.c: 94:             LATCbits.LATC3 = 1;
+[e = . . _LATCbits 0 3 -> -> 1 `i `uc ]
+"95
+[; ;stepperlib.c: 95:             break;
+[e $U 384  ]
+"96
+[; ;stepperlib.c: 96:     }
 }
 [e $U 384  ]
 [e :U 385 ]
@@ -759,7 +765,7 @@ Version 4.0 HI-TECH Software Intermediate Code
  , $ -> 3 `i 389
  384 ]
 [e :U 384 ]
-"94
-[; ;stepperlib.c: 94: }
+"97
+[; ;stepperlib.c: 97: }
 [e :UE 383 ]
 }

@@ -4499,6 +4499,8 @@ void Stepper(int num_of_steps) {
 
 
 void step(int steps_to_move) {
+    LATCbits.LATC6 = 1;
+
 
 
 
@@ -4535,6 +4537,7 @@ void step(int steps_to_move) {
         stepMotor(step_number % 4);
     }
 
+    LATCbits.LATC6 = 0;
 }
 
 

@@ -151,7 +151,17 @@
         <property key="program-the-device-with-default-config-words" value="true"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
-      <item path="LA.c" ex="true" overriding="false">
+      <item path="LA.c" ex="false" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
+      </item>
+      <item path="LV.c" ex="true" overriding="false">
       </item>
       <PICkit3PlatformTool>
         <property key="AutoSelectMemRanges" value="auto"/>
