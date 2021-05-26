@@ -67,7 +67,7 @@ class Instructiemaker:
     def schrijf_instructie(self, geselecteerdeWiel, stappen, directie):
         stappen = int(stappen)
         if stappen < 256:
-            msg = geselecteerdeWiel.wiel.identificatie + chr(int(stappen)) + chr(0) + directie + geselecteerdeWiel.wiel.identificatie
+            msg = bytes(geselecteerdeWiel.wiel.identificatie, 'utf-8') + bytes([stappen]) + bytes([1]) + bytes(directie, 'utf-8') + bytes(geselecteerdeWiel.wiel.identificatie, 'utf-8')
         else:
             char2 = 0
             moduloTracker = 100000
@@ -87,6 +87,6 @@ class Instructiemaker:
                     char1 = int(tempchar1)
                     char2 = int(tempchar2)
                     break
-            msg = geselecteerdeWiel.wiel.identificatie + chr(char1) + chr(char2) + directie + geselecteerdeWiel.wiel.identificatie
+            msg = bytes(geselecteerdeWiel.wiel.identificatie, 'utf-8') + bytes([char1]) + bytes([char2]) + bytes(directie, 'utf-8') + bytes(geselecteerdeWiel.wiel.identificatie, 'utf-8')
 
         geselecteerdeWiel.instructie = msg

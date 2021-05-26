@@ -1,19 +1,26 @@
+import serial, time
+import RPi.GPIO as GPIO
+
 class Uarthandeler:
     def __init__(self):
-        help = 0
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(17, GPIO.IN)
+
+        self.ser = serial.Serial('/dev/ttyS0', baudrate=9600,
+                            parity=serial.PARITY_NONE,
+                            stopbits=serial.STOPBITS_ONE,
+                            bytesize=serial.EIGHTBITS
+                            )
 
     def stuur_instructie(self, instructie):
-        for i in instructie.rijinstructies.wielinstructies:
-            print("new message:")
-            for j in i:
-                print(j.instructie)
-                print(ord(j.instructie[2]), ord(j.instructie[3]))
-                if ord(j.instructie[3]) != 0:
-                    stappen = ord(j.instructie[2]) * ord(j.instructie[3])
-                    print(stappen)
-                else:
-                    stappen = ord(j.instructie[2])
-                rotaties = stappen / j.wiel.volstap
-                # print(rotaties)
-                afstand = rotaties * j.wiel.omtrek
-                print(afstand)
+        for rijinstructie in instructie.rijinstructies.wielinstructies:
+            print("niew")
+            while GPIO.input(17):
+                niks = False
+
+            for wielinstructie in rijinstructie:
+                self.ser.write(wielinstructie.instructie)
+
+            self.ser.write(bytes("sssssss", 'utf-8'))
+
+            time.sleep(0.1)
