@@ -1,4 +1,4 @@
-from src import instructiemaker, wiel, pad, uarthandeler
+import instructiemaker, wiel, pad, uarthandeler
 
 
 def setup_wielen():
@@ -17,9 +17,9 @@ def setup_wielen():
 
 def setup_pad():
     padarray = pad.Pad()
-    padarray.set_vector(0, 10)
+    #padarray.set_vector(0, 10)
     padarray.set_vector(90, 10)
-    padarray.set_vector(-90, 10)
+    #padarray.set_vector(-90, 10)
 
     return padarray
 
@@ -27,11 +27,10 @@ def setup_pad():
 if __name__ == '__main__':
     volgen = setup_pad()
     wielen = setup_wielen()
+    uart = uarthandeler.Uarthandeler()
 
     instructies = instructiemaker.Instructiemaker()
     for i in range(len(volgen.vectoren)):
+        instructies.rijinstructies.wielinstructies = []
         instructies.maak_instructie(wielen, volgen.get_vector())
-
-    uart = uarthandeler.Uarthandeler()
-
-    uart.stuur_instructie(instructies)
+        uart.stuur_instructie(instructies)

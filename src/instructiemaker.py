@@ -1,5 +1,5 @@
-import math
 from src import rijinstructie, wielinstrucitie
+import math
 
 
 class Instructiemaker:
@@ -49,7 +49,7 @@ class Instructiemaker:
                 else:
                     directie = "v"
 
-            self.schrijf_instructie(i, stappen, directie)
+            self.schrijf_instructie(i, stappen, directie, graden)
 
     def bereken_rijden(self, wielen, afstand):
         for i in wielen:
@@ -64,7 +64,8 @@ class Instructiemaker:
             self.schrijf_instructie(i, stappen, directie)
 
     # maak met behulp van de te zetten stappen een message voor het geselecteerde wiel maken en zet deze in het wielinstructie
-    def schrijf_instructie(self, geselecteerdeWiel, stappen, directie):
+    def schrijf_instructie(self, geselecteerdeWiel, stappen, directie, graden = 0):
+        geselecteerdeWiel.draai = graden
         stappen = int(stappen)
         if stappen < 256:
             msg = bytes(geselecteerdeWiel.wiel.identificatie, 'utf-8') + bytes([stappen]) + bytes([1]) + bytes(directie, 'utf-8') + bytes(geselecteerdeWiel.wiel.identificatie, 'utf-8')
