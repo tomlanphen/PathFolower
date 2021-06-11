@@ -1,2 +1,2 @@
 # PathFolower
-The git of the 2nd year project Robotica of my college
+De c code is te vinden in de Pathfollower.X map
