@@ -1,4 +1,4 @@
-Hier zijn is de c code voor de microcontroller te vinden.
+Hier is de c code voor de microcontroller te vinden.
 
 De LA, LV, RA en RV scripts zijn zo gelabeld omdat dit de mains zijn voor de microcontrollers met label LA, LV, RA en RV respectievelijk.
 
