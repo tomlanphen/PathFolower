@@ -1,2 +1,2 @@
 # PathFolower
-The git of the 2nd year project Robotica of my college
+In PathFolower is de python code voor de gemaakte classes te vinden.
