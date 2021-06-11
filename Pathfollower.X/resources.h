@@ -10,10 +10,16 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
-char var1 = 0x20;
-char var2 = 0x08;
-char var;
 int stepvar;
+
+char comb1 = 0x00;
+char comb2 = 0x00;
+char comb3 = 0x00;
+char comb4 = 0x00;
+char comb5 = 0x00;
+char comb6 = 0x00;
+char comb7 = 0x00;
+
 
 #endif	/* RESOURCES_H */
 

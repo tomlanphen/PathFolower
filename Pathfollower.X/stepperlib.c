@@ -23,6 +23,8 @@ void Stepper(int num_of_steps) {
  * the motor moves in the reverse direction.
  */
 void step(int steps_to_move) {
+    LATCbits.LATC6 = 1;
+    
     //TMR1 = 0;
     //T1CONbits.TMR1ON = 0;       // enable timer1
 
@@ -39,7 +41,7 @@ void step(int steps_to_move) {
 
     // decrement the number of steps, moving one step each time:
     while (steps_left > 0) {
-        __delay_ms(5);
+        __delay_ms(2);
         // increment or decrement the step number,
         // depending on direction:
         if (direction == 1) {
@@ -58,7 +60,8 @@ void step(int steps_to_move) {
         // step the motor to step number 0, 1, ..., {3 or 10}
         stepMotor(step_number % 4);
     }
-    //}
+    
+    LATCbits.LATC6 = 0;
 }
 
 /*

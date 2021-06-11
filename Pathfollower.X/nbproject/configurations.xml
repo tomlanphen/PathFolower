@@ -17,7 +17,10 @@
                    projectFiles="true">
       <itemPath>stepperlib.c</itemPath>
       <itemPath>uartlib.c</itemPath>
-      <itemPath>main.c</itemPath>
+      <itemPath>LA.c</itemPath>
+      <itemPath>RA.c</itemPath>
+      <itemPath>RV.c</itemPath>
+      <itemPath>LV.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -148,6 +151,18 @@
         <property key="program-the-device-with-default-config-words" value="true"/>
         <property key="remove-unused-sections" value="true"/>
       </HI-TECH-LINK>
+      <item path="LA.c" ex="false" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
+      </item>
+      <item path="LV.c" ex="true" overriding="false">
+      </item>
       <PICkit3PlatformTool>
         <property key="AutoSelectMemRanges" value="auto"/>
         <property key="Freeze Peripherals" value="true"/>
@@ -193,6 +208,26 @@
         <property key="programoptions.uselvpprogramming" value="false"/>
         <property key="voltagevalue" value="${poweroptions.DefaultPower}"/>
       </PICkit3PlatformTool>
+      <item path="RA.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
+      </item>
+      <item path="RV.c" ex="true" overriding="false">
+        <HI-TECH-COMP>
+        </HI-TECH-COMP>
+        <HI-TECH-LINK>
+        </HI-TECH-LINK>
+        <XC8-CO>
+        </XC8-CO>
+        <XC8-config-global>
+        </XC8-config-global>
+      </item>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
       </XC8-CO>

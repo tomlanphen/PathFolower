@@ -8,29 +8,40 @@
 false 0
 true 1
 ]
+"111 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\LA.c
+[e E2583 . `uc
+false 0
+true 1
+]
 "1 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
 [v _abs abs `(i  1 e 2 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "6 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"27 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\main.c
+"28 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\LA.c
 [v _ISR ISR `II(v  1 e 1 0 ]
-"37
+"33
 [v _main main `(v  1 e 1 0 ]
-"49
+"90
+[v _empty_comb empty_comb `(v  1 e 1 0 ]
+"100
 [v _setup setup `(v  1 e 1 0 ]
 "9 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\stepperlib.c
 [v _Stepper Stepper `(v  1 e 1 0 ]
 "25
 [v _step step `(v  1 e 1 0 ]
-"67
+"70
 [v _stepMotor stepMotor `(v  1 e 1 0 ]
-"107 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\uartlib.c
+"93 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\uartlib.c
+[v _uart_init uart_init `(E2  1 e 1 0 ]
+"107
 [v _uart_turnoff uart_turnoff `(v  1 e 1 0 ]
 "115
 [v _uart_transmitter_setup uart_transmitter_setup `(v  1 e 1 0 ]
@@ -44,28 +55,36 @@ true 1
 [v _uart_write_string uart_write_string `(v  1 e 1 0 ]
 "195
 [v _uart_write_newline uart_write_newline `(v  1 e 1 0 ]
+"204
+[v _uart_handle_rcv_int uart_handle_rcv_int `(v  1 e 1 0 ]
+"222
+[v _uart_handle_tx_int uart_handle_tx_int `(v  1 e 1 0 ]
+"234
+[v _uart_read_char uart_read_char `(uc  1 e 1 0 ]
 "255
 [v _uart_flush_buffer uart_flush_buffer `(v  1 e 1 0 ]
-"15 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X/resources.h
-[v _var var `uc  1 e 1 0 ]
-"16
+"13 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X/resources.h
 [v _stepvar stepvar `i  1 e 2 0 ]
+"15
+[v _comb1 comb1 `uc  1 e 1 0 ]
+"16
+[v _comb2 comb2 `uc  1 e 1 0 ]
+"17
+[v _comb3 comb3 `uc  1 e 1 0 ]
+"18
+[v _comb4 comb4 `uc  1 e 1 0 ]
+"19
+[v _comb5 comb5 `uc  1 e 1 0 ]
+"20
+[v _comb6 comb6 `uc  1 e 1 0 ]
+"21
+[v _comb7 comb7 `uc  1 e 1 0 ]
 "14 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X/stepperlib.h
 [v _direction direction `i  1 e 2 0 ]
 "15
 [v _number_of_steps number_of_steps `i  1 e 2 0 ]
 "16
 [v _step_number step_number `i  1 e 2 0 ]
-[s S268 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-]
-"444 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h
-[u S275 . 1 `S268 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES275  1 e 1 @12 ]
 [s S22 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
@@ -75,10 +94,10 @@ true 1
 `uc 1 TRISC6 1 0 :1:6 
 `uc 1 TRISC7 1 0 :1:7 
 ]
-"1291
+"1291 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h
 [u S31 . 1 `S22 1 . 1 0 ]
 [v _TRISCbits TRISCbits `VES31  1 e 1 @142 ]
-[s S291 . 1 `uc 1 SCS0 1 0 :1:0 
+[s S278 . 1 `uc 1 SCS0 1 0 :1:0 
 `uc 1 SCS1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 IRCF0 1 0 :1:3 
@@ -88,13 +107,13 @@ true 1
 `uc 1 SPLLEN 1 0 :1:7 
 ]
 "1788
-[s S300 . 1 `uc 1 SCS 1 0 :2:0 
+[s S287 . 1 `uc 1 SCS 1 0 :2:0 
 `uc 1 . 1 0 :1:2 
 `uc 1 IRCF 1 0 :4:3 
 ]
-[u S304 . 1 `S291 1 . 1 0 `S300 1 . 1 0 ]
-[v _OSCCONbits OSCCONbits `VES304  1 e 1 @153 ]
-[s S59 . 1 `uc 1 LATC0 1 0 :1:0 
+[u S291 . 1 `S278 1 . 1 0 `S287 1 . 1 0 ]
+[v _OSCCONbits OSCCONbits `VES291  1 e 1 @153 ]
+[s S43 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -104,19 +123,8 @@ true 1
 `uc 1 LATC7 1 0 :1:7 
 ]
 "2200
-[u S68 . 1 `S59 1 . 1 0 ]
-[v _LATCbits LATCbits `VES68  1 e 1 @270 ]
-[s S322 . 1 `uc 1 ANSA0 1 0 :1:0 
-`uc 1 ANSA1 1 0 :1:1 
-`uc 1 ANSA2 1 0 :1:2 
-`uc 1 . 1 0 :1:3 
-`uc 1 ANSA4 1 0 :1:4 
-]
-"2967
-[s S328 . 1 `uc 1 ANSELA 1 0 :5:0 
-]
-[u S330 . 1 `S322 1 . 1 0 `S328 1 . 1 0 ]
-[v _ANSELAbits ANSELAbits `VES330  1 e 1 @396 ]
+[u S52 . 1 `S43 1 . 1 0 ]
+[v _LATCbits LATCbits `VES52  1 e 1 @270 ]
 [s S174 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 ANSELB 1 0 :2:4 
 ]
@@ -157,21 +165,7 @@ true 1
 "3452
 [u S157 . 1 `S148 1 . 1 0 ]
 [v _TXSTAbits TXSTAbits `VES157  1 e 1 @414 ]
-[s S342 . 1 `uc 1 IOCAP0 1 0 :1:0 
-`uc 1 IOCAP1 1 0 :1:1 
-`uc 1 IOCAP2 1 0 :1:2 
-`uc 1 IOCAP3 1 0 :1:3 
-`uc 1 IOCAP4 1 0 :1:4 
-`uc 1 IOCAP5 1 0 :1:5 
-]
-"5959 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h
-[s S349 . 1 `uc 1 IOCAP 1 0 :6:0 
-]
-[u S351 . 1 `S342 1 . 1 0 `S349 1 . 1 0 ]
-[v _IOCAPbits IOCAPbits `VES351  1 e 1 @913 ]
-"6057
-[v _IOCAF IOCAF `VEuc  1 e 1 @915 ]
-"7128 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\PIC16F1829.h
+"7128
 [v _BRG16 BRG16 `VEb  1 e 0 @3323 ]
 "7131
 [v _BRGH BRGH `VEb  1 e 0 @3314 ]
@@ -181,8 +175,6 @@ true 1
 [v _FERR FERR `VEb  1 e 0 @3306 ]
 "7533 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h
 [v _GIE GIE `VEb  1 e 0 @95 ]
-"7704
-[v _IOCIE IOCIE `VEb  1 e 0 @91 ]
 "7863 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\PIC16F1829.h
 [v _OERR OERR `VEb  1 e 0 @3305 ]
 "7944 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h
@@ -191,9 +183,7 @@ true 1
 [v _RCIE RCIE `VEb  1 e 0 @1165 ]
 "8046
 [v _RCIF RCIF `VEb  1 e 0 @141 ]
-"8367 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1829.h
-[v _TRISA2 TRISA2 `VEb  1 e 0 @1122 ]
-"8454 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\PIC16F1829.h
+"8454
 [v _TXIE TXIE `VEb  1 e 0 @1164 ]
 "8457
 [v _TXIF TXIF `VEb  1 e 0 @140 ]
@@ -211,15 +201,103 @@ true 1
 [v _uart_transmit_head uart_transmit_head `VEuc  1 e 1 0 ]
 "91
 [v _uart_transmit_tail uart_transmit_tail `VEuc  1 e 1 0 ]
-"37 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\main.c
+"33 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\LA.c
 [v _main main `(v  1 e 1 0 ]
 {
-"47
+"41
+[v main@uart_char uart_char `uc  1 a 1 27 ]
+"88
 } 0
-"49
+"234 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\uartlib.c
+[v _uart_read_char uart_read_char `(uc  1 e 1 0 ]
+{
+"239
+[v uart_read_char@uart_char uart_char `uc  1 a 1 3 ]
+"243
+} 0
+"25 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\stepperlib.c
+[v _step step `(v  1 e 1 0 ]
+{
+"31
+[v step@steps_left steps_left `i  1 a 2 7 ]
+"25
+[v step@steps_to_move steps_to_move `i  1 p 2 4 ]
+"65
+} 0
+"70
+[v _stepMotor stepMotor `(v  1 e 1 0 ]
+{
+[v stepMotor@thisStep thisStep `i  1 p 2 0 ]
+"97
+} 0
+"1 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 0 ]
+"4
+} 0
+"100 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\LA.c
 [v _setup setup `(v  1 e 1 0 ]
 {
-"61
+"113
+} 0
+"93 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\uartlib.c
+[v _uart_init uart_init `(E2  1 e 1 0 ]
+{
+[v uart_init@b b `uc  1 a 1 wreg ]
+[v uart_init@b b `uc  1 a 1 wreg ]
+[v uart_init@c c `uc  1 p 1 18 ]
+[v uart_init@b b `uc  1 a 1 20 ]
+"105
+} 0
+"107
+[v _uart_turnoff uart_turnoff `(v  1 e 1 0 ]
+{
+"113
+} 0
+"255
+[v _uart_flush_buffer uart_flush_buffer `(v  1 e 1 0 ]
+{
+"256
+[v uart_flush_buffer@i i `i  1 a 2 0 ]
+"267
+} 0
+"115
+[v _uart_transmitter_setup uart_transmitter_setup `(v  1 e 1 0 ]
+{
+"119
+} 0
+"121
+[v _uart_reciever_setup uart_reciever_setup `(v  1 e 1 0 ]
+{
+"129
+} 0
+"131
+[v _uart_clock_setup uart_clock_setup `(E2  1 e 1 0 ]
+{
+[v uart_clock_setup@b b `uc  1 a 1 wreg ]
+"140
+[v uart_clock_setup@i i `i  1 a 2 16 ]
+"131
+[v uart_clock_setup@b b `uc  1 a 1 wreg ]
+[v uart_clock_setup@c c `uc  1 p 1 0 ]
+[v uart_clock_setup@b b `uc  1 a 1 15 ]
+"170
+} 0
+"90 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\LA.c
+[v _empty_comb empty_comb `(v  1 e 1 0 ]
+{
+"98
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 4 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 0 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 2 ]
+"53
 } 0
 "9 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\stepperlib.c
 [v _Stepper Stepper `(v  1 e 1 0 ]
@@ -227,29 +305,18 @@ true 1
 [v Stepper@num_of_steps num_of_steps `i  1 p 2 0 ]
 "19
 } 0
-"27 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\main.c
+"28 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\LA.c
 [v _ISR ISR `II(v  1 e 1 0 ]
 {
-"35
+"31
 } 0
-"25 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\stepperlib.c
-[v _step step `(v  1 e 1 0 ]
+"222 C:\Users\Tom\MPLABXProjects\PathFolower\Pathfollower.X\uartlib.c
+[v _uart_handle_tx_int uart_handle_tx_int `(v  1 e 1 0 ]
 {
-"29
-[v step@steps_left steps_left `i  1 a 2 7 ]
-"25
-[v step@steps_to_move steps_to_move `i  1 p 2 4 ]
-"62
+"232
 } 0
-"67
-[v _stepMotor stepMotor `(v  1 e 1 0 ]
+"204
+[v _uart_handle_rcv_int uart_handle_rcv_int `(v  1 e 1 0 ]
 {
-[v stepMotor@thisStep thisStep `i  1 p 2 0 ]
-"94
-} 0
-"1 C:\Program Files\Microchip\xc8\v2.32\pic\sources\c99\common\abs.c
-[v _abs abs `(i  1 e 2 0 ]
-{
-[v abs@a a `i  1 p 2 0 ]
-"4
+"220
 } 0
