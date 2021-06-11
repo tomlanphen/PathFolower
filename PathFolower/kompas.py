@@ -1,3 +1,4 @@
+# geschrapt idee om een kompas sensor te gebruiken
 from __future__ import print_function
 import time, sys, signal, atexit, math
 try:
