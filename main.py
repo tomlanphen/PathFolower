@@ -23,4 +23,4 @@ if __name__ == '__main__':
         instructies.maak_instructie(wielen, volgen.get_vector())
         uart.stuur_instructie(instructies)
 
-        # start de woordzoeker
+        # start de woordzoeker van Jens
