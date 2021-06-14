@@ -5,8 +5,8 @@ import utilities
 def setup_pad():
     padarray = pad.Pad()
     padarray.set_vector(0, 30)
-    padarray.set_vector(-90, 35)
-    padarray.set_vector(-90, 20)
+    padarray.set_vector(0, 35)
+    padarray.set_vector(-90, 0)
 
     return padarray
 
